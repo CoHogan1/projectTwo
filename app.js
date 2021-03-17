@@ -10,15 +10,18 @@ app.use(express.static('public'))
 const mongoose = require('mongoose')
 
 
+const Attempt = require('./models/schema.js')
 
 
 
+
+
+
+// controllers ---------------------------------------------------------------
 app.get('/home', (req, res)=>{
     console.log('Running')
     res.send(`<h1>This is working!</h1>`)
 })
-
-
 
 
 

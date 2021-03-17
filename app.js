@@ -71,7 +71,7 @@ app.get('/home/index', (req, res)=>{
         if (err) {
             console.log(err)
         } else {
-            console.log(data)
+            //console.log(data)
             res.render('index.ejs', { practices: data})
         }
     })
@@ -79,11 +79,26 @@ app.get('/home/index', (req, res)=>{
 
 app.get('/home/index/:id', (req, res)=>{
     Attempt.findById(req.params.id, (err, system)=>{
-        console.log(system)
+        //console.log(system)
         //res.send("This is working")
         res.render('show.ejs', { practices: system})
     })
 })
+
+
+// edit route----1 0f 2---------------------------------------------------------
+app.get('/home/index/:id/edit', (req, res)=>{
+    Attempt.findById(req.params.id, (err, program)=>{
+        //console.log(program)
+        //res.send("This is working")
+        res.render('edit.ejs', { practices: program})
+    })
+})
+
+
+
+
+
 
 
 

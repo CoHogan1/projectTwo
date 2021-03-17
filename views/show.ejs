@@ -5,12 +5,20 @@
         <title>Show.ejs</title>
     </head>
     <body>
-        
+
         <h1> <%= practices.name%>        </h1>
         <h1> <%= practices.didItWork%>   </h1>
         <h1> <%= practices.myRating%>    </h1>
         <h1> <%= practices.results%>     </h1>
         <h1> <%= practices.notes%>       </h1>
+
+        <button type="button"
+        onclick='window.location.href="/home/index/<%=practices.id%>/edit"'>
+        Edit</button>
+
+
+
+
 
     </body>
 </html>

@@ -31,16 +31,18 @@ db.on('error', (err)=> console.log(err.message + ' Mongo is not running!!!'))
 db.on('connected', ()=> console.log('Mongo connected: ' + mongoURI))
 db.on('disconnected', ()=> console.log('Mongo is now Disconnected, Have a good day!'))
 
+
+//==============================================================================
 // send files to database
 
-Attempt.create(information, (err, totalData)=>{
-    if (err) {
-        console.log(err)
-    } else {
-        console.log(totalData)
-    }
-    db.close()
-})
+// Attempt.create(information, (err, totalData)=>{
+//     if (err) {
+//         console.log(err)
+//     } else {
+//         console.log(totalData)
+//     }
+//     db.close()
+// })
 
 // Attempt.remove({}, (err, allData)=>{ // remove all data from DB
 //     console.log(allData)
@@ -50,6 +52,8 @@ Attempt.create(information, (err, totalData)=>{
 //     console.log(everything)
 //     db.close()
 // })
+
+//==============================================================================
 
 
 
@@ -63,7 +67,22 @@ app.get('/home', (req, res)=>{
 
 app.get('/home/index', (req, res)=>{
     console.log('index route')
-    res.send()
+    Attempt.find({}, (err, data, next)=>{
+        if (err) {
+            console.log(err)
+        } else {
+            console.log(data)
+            res.render('index.ejs', { practices: data})
+        }
+    })
+})
+
+app.get('/home/index/:id', (req, res)=>{
+    Attempt.findById(req.params.id, (err, system)=>{
+        console.log(system)
+        //res.send("This is working")
+        res.render('show.ejs', { practices: system})
+    })
 })
 
 

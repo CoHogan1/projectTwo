@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>index.ejs</title>
+    </head>
+    <body>
+        <h1>Index page</h1>
+
+        <table>
+            <tr>
+                <td>Name:</td>
+                <td>Did It Work?</td>
+                <td>My Rating</td>
+                <td>Results:</td>
+                <td>Notes:</td>
+            </tr>
+            <tr>
+            <%for (let i = 0; i < practices.length; i++) { %>
+                <td><%=practices[i].name%></td> 
+                <td><%=practices[i].didItWork%></td>
+                <td><%=practices[i].myRating%></td>
+                <td><%=practices[i].results%></td>
+                <td><%=practices[i].notes%></td>
+            </tr>
+            <%}%>
+            <tr>
+                <td>Add</td>
+                <td>1</td>
+                <td>2</td>
+                <td>3</td>
+                <td>4</td>
+            </tr>
+        </table>
+    </body>
+</html>

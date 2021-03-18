@@ -3,6 +3,14 @@ const express = require('express')
 const PORT = 3000
 const app = express()
 
+// controller import
+
+const systemControllers = require('./controllers/server.js')
+
+
+const Attempt = require('./models/schema.js')
+// controller import
+
 app.use(express.json())
 //app.use(express.url({extended: true}))
 app.use(express.static('public'))
@@ -13,7 +21,7 @@ const methodOverride = require('method-override')
 app.use(methodOverride('_method'))
 
 
-const Attempt = require('./models/schema.js')
+
 const information = require('./models/databseInfo.js') // lol databse.
 const mongoURI = 'mongodb://127.0.0.1:27017/' + 'deFogger' // database name
 const db = mongoose.connection
@@ -58,131 +66,137 @@ app.use(express.urlencoded({extended:true}))
 
 //==============================================================================
 
-
-// controllers ---------------------------------------------------------------
-app.get('/home', (req, res)=>{
-    console.log('Running')
-    // Attempt.create(req.body, (err, genesis)=>{
-    //     if (err) {
-    //         console.log(err)
-    //     } else {
-    //         console.log(genesis)
-    //         res.redirect('/home/')
-    //     }
-    //})
-    res.send(`<h1>This is working!</h1>`)
-})
-
-//-----show---------------------------------------------------------------------
+app.use('/home', systemControllers)
 
 
-app.post('/home/index', (req, res)=>{
-    if (req.body.didItWork === "on"){
-        req.body.didItWork = true;
-    }
-    else{
-        req.body.didItWork = false;
-    }
-    Attempt.create(req.body, (err, newSystem)=>{
-        if (err) {
-            console.log(err)
-        } else {
-            console.log(newSystem)
-            res.redirect('/home/index')
-        }
-    })
-
-})
-
-app.get('/home/index/new', (req, res)=>{
-    console.log('**new route**')
-    res.render('new.ejs')
-})
-
-
-
-app.get('/home/index/:id', (req, res)=>{
-    Attempt.findById(req.params.id, (err, system)=>{
-        //console.log(system)
-        //res.send("This is working")
-        res.render('show.ejs', { practices: system})
-    })
-})
-
-app.get('/home/index', (req, res)=>{
-    //console.log('get index route')
-    Attempt.find({}, (err, data, next)=>{
-        if (err) {
-            console.log(err)
-        } else {
-            //console.log(data)
-            res.render('index.ejs', { practices: data})
-        }
-    })
-})
-
-app.put('/home/index', (req, res)=>{
-    console.log('pposting to home/index route')
-    Attempt.create(req.body, (err, genesis)=>{ // probably dont need this create.
-        if (err) {
-            console.log(err)
-        } else {
-            console.log(genesis + " this is the req.body")
-            res.redirect('/home/index')
-        }
-    })
-})
-
-
-// delete-----------------------------------------------------------------------
-
-app.delete('/home/index/:id', (req, res)=>{
-    console.log('Delete route activated.')
-    //res.send('Deleting')
-    Attempt.findByIdAndRemove(req.params.id, (err, data)=>{
-        if (err) {
-            console.log(err)
-        } else {
-            console.log(data + " the data to be deleted.......")
-            res.redirect('/home/index')
-        }
-    })
-})
-
-// edit route----1 0f 2---------------------------------------------------------
-app.get('/home/index/:id/edit', (req, res)=>{
-    Attempt.findById(req.params.id, (err, program)=>{
-        //console.log(program)
-        //res.send("This is working")
-        res.render('edit.ejs', { practices: program })
-    })
-})
-
-
-// --------------2 of 2---------------------------------------------------------
-app.put('/home/index/:id', (req, res)=>{
-    //console.log(req.body) // this is working
-    if (req.body.didItWork === 'on') {
-        req.body.didItWork = true
-    } else {
-        req.body.didItWork = false
-    }
-    console.log(req.body)
-    console.log(req.params.id)
-    //res.send("Checking to see if this works")  // working
-    Attempt.findByIdAndUpdate(
-        req.params.id,
-        req.body,
-        {new:true},
-        (err, updates)=>{
-            console.log(updates)
-            //res.send(updates)
-            res.redirect('/home/index')
-    })
-})
-
-//------------------------------------------------------------------------------
 
 app.listen(PORT, (req, res)=>{
     console.log('app is listening')
 })
+
+
+
+
+// // controllers ---------------------------------------------------------------
+// app.get('/home', (req, res)=>{
+//     console.log('Running')
+//     // Attempt.create(req.body, (err, genesis)=>{
+//     //     if (err) {
+//     //         console.log(err)
+//     //     } else {
+//     //         console.log(genesis)
+//     //         res.redirect('/home/')
+//     //     }
+//     //})
+//     res.send(`<h1>This is working!</h1>`)
+// })
+//
+// //-----show---------------------------------------------------------------------
+//
+//
+// app.post('/home/index', (req, res)=>{
+//     if (req.body.didItWork === "on"){
+//         req.body.didItWork = true;
+//     }
+//     else{
+//         req.body.didItWork = false;
+//     }
+//     Attempt.create(req.body, (err, newSystem)=>{
+//         if (err) {
+//             console.log(err)
+//         } else {
+//             console.log(newSystem)
+//             res.redirect('/home/index')
+//         }
+//     })
+//
+// })
+//
+// app.get('/home/index/new', (req, res)=>{
+//     console.log('**new route**')
+//     res.render('new.ejs')
+// })
+//
+//
+//
+// app.get('/home/index/:id', (req, res)=>{
+//     Attempt.findById(req.params.id, (err, system)=>{
+//         //console.log(system)
+//         //res.send("This is working")
+//         res.render('show.ejs', { practices: system})
+//     })
+// })
+//
+// app.get('/home/index', (req, res)=>{
+//     //console.log('get index route')
+//     Attempt.find({}, (err, data, next)=>{
+//         if (err) {
+//             console.log(err)
+//         } else {
+//             //console.log(data)
+//             res.render('index.ejs', { practices: data})
+//         }
+//     })
+// })
+//
+// app.put('/home/index', (req, res)=>{
+//     console.log('pposting to home/index route')
+//     Attempt.create(req.body, (err, genesis)=>{ // probably dont need this create.
+//         if (err) {
+//             console.log(err)
+//         } else {
+//             console.log(genesis + " this is the req.body")
+//             res.redirect('/home/index')
+//         }
+//     })
+// })
+//
+//
+// // delete-----------------------------------------------------------------------
+//
+// app.delete('/home/index/:id', (req, res)=>{
+//     console.log('Delete route activated.')
+//     //res.send('Deleting')
+//     Attempt.findByIdAndRemove(req.params.id, (err, data)=>{
+//         if (err) {
+//             console.log(err)
+//         } else {
+//             console.log(data + " the data to be deleted.......")
+//             res.redirect('/home/index')
+//         }
+//     })
+// })
+//
+// // edit route----1 0f 2---------------------------------------------------------
+// app.get('/home/index/:id/edit', (req, res)=>{
+//     Attempt.findById(req.params.id, (err, program)=>{
+//         //console.log(program)
+//         //res.send("This is working")
+//         res.render('edit.ejs', { practices: program })
+//     })
+// })
+//
+//
+// // --------------2 of 2---------------------------------------------------------
+// app.put('/home/index/:id', (req, res)=>{
+//     //console.log(req.body) // this is working
+//     if (req.body.didItWork === 'on') {
+//         req.body.didItWork = true
+//     } else {
+//         req.body.didItWork = false
+//     }
+//     console.log(req.body)
+//     console.log(req.params.id)
+//     //res.send("Checking to see if this works")  // working
+//     Attempt.findByIdAndUpdate(
+//         req.params.id,
+//         req.body,
+//         {new:true},
+//         (err, updates)=>{
+//             console.log(updates)
+//             //res.send(updates)
+//             res.redirect('/home/index')
+//     })
+// })
+//
+// //------------------------------------------------------------------------------

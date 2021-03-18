@@ -75,6 +75,32 @@ app.get('/home', (req, res)=>{
 
 //-----show---------------------------------------------------------------------
 
+
+app.post('/home/index', (req, res)=>{
+    if (req.body.didItWork === "on"){
+        req.body.didItWork = true;
+    }
+    else{
+        req.body.didItWork = false;
+    }
+    Attempt.create(req.body, (err, newSystem)=>{
+        if (err) {
+            console.log(err)
+        } else {
+            console.log(newSystem)
+            res.redirect('/home/index')
+        }
+    })
+
+})
+
+app.get('/home/index/new', (req, res)=>{
+    console.log('**new route**')
+    res.render('new.ejs')
+})
+
+
+
 app.get('/home/index/:id', (req, res)=>{
     Attempt.findById(req.params.id, (err, system)=>{
         //console.log(system)

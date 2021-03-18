@@ -74,8 +74,17 @@ app.get('/home', (req, res)=>{
 })
 
 //-----show---------------------------------------------------------------------
+
+app.get('/home/index/:id', (req, res)=>{
+    Attempt.findById(req.params.id, (err, system)=>{
+        //console.log(system)
+        //res.send("This is working")
+        res.render('show.ejs', { practices: system})
+    })
+})
+
 app.get('/home/index', (req, res)=>{
-    console.log('index route')
+    //console.log('get index route')
     Attempt.find({}, (err, data, next)=>{
         if (err) {
             console.log(err)
@@ -98,17 +107,21 @@ app.put('/home/index', (req, res)=>{
     })
 })
 
-//-----show---------------------------------------------------------------------
 
+// delete-----------------------------------------------------------------------
 
-app.get('/home/index/:id', (req, res)=>{
-    Attempt.findById(req.params.id, (err, system)=>{
-        //console.log(system)
-        //res.send("This is working")
-        res.render('show.ejs', { practices: system})
+app.delete('/home/index/:id', (req, res)=>{
+    console.log('Delete route activated.')
+    //res.send('Deleting')
+    Attempt.findByIdAndRemove(req.params.id, (err, data)=>{
+        if (err) {
+            console.log(err)
+        } else {
+            console.log(data + " the data to be deleted.......")
+            res.redirect('/home/index')
+        }
     })
 })
-
 
 // edit route----1 0f 2---------------------------------------------------------
 app.get('/home/index/:id/edit', (req, res)=>{
@@ -142,14 +155,7 @@ app.put('/home/index/:id', (req, res)=>{
     })
 })
 
-
 //------------------------------------------------------------------------------
-
-
-
-
-
-
 
 app.listen(PORT, (req, res)=>{
     console.log('app is listening')

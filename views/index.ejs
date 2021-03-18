@@ -17,7 +17,17 @@
             </tr>
             <tr>
             <%for (let i = 0; i < practices.length; i++) { %>
-                <td><%=practices[i].name%></td> 
+                <td><button type="button" name="button"
+                    onclick="window.location.href='index/<%=practices[i].id%>/edit'"
+                    >Edit</button></td>
+
+                <td><%=practices[i].name%></td>
+
+                <td>
+                    <form action="/home/index/<%=practices[i].id%>?_method=DELETE" method="POST">
+                        <button>Remove</button>
+                    </form>
+                </td>
                 <td><%=practices[i].didItWork%></td>
                 <td><%=practices[i].myRating%></td>
                 <td><%=practices[i].results%></td>
@@ -26,10 +36,7 @@
             <%}%>
             <tr>
                 <td>Add</td>
-                <td>1</td>
-                <td>2</td>
-                <td>3</td>
-                <td>4</td>
+
             </tr>
         </table>
     </body>

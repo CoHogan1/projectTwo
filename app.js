@@ -71,7 +71,7 @@ app.use('/home', systemControllers)
 
 
 app.listen(PORT, (req, res)=>{
-    console.log('app is listening')
+    console.log('Project 2 App is listening.')
 })
 
 

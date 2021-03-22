@@ -5,20 +5,23 @@ const User = require('../models/users')
 const bcrypt = require('bcrypt')
 
 
-// User routerrouter.get('/new', (req, res)=>{
+// USER NEW ROUTE
+router.get('/new', (req, res)=>{
+    console.log('users.new route');
     res.render('users/new.ejs',{ currentUser: req.session.currentUser})
 })
 
 
 // USER CREATE ROUTE
 router.post('/', (req, res)=>{
+    console.log('making a new user....');
     // hashing and salting the password
-    req.body.password = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(9))
+    req.body.password = bcrypt.hashSync(req.body.password, bcrypt.genSaltSync(10))
 
     User.create(req.body, (err, createdUser)=>{
         if  (err){
             if (err.code===11000){
-                res.send('USER already exist!!!')
+                res.send('User already exist!!!')
             }
             else{
                 res.send(err)
@@ -29,3 +32,5 @@ router.post('/', (req, res)=>{
         }
     })
 })
+
+module.exports = router

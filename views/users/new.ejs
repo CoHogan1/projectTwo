@@ -1,11 +1,27 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-    <head>
-        <meta charset="utf-8">
-        <title>Users</title>
-    </head>
-    <body>
-        <h1>User page Test</h1>
+<%- include('../partials/head.ejs') %>
+<%- include('../partials/nav.ejs') %>
 
-    </body>
-</html>
+    <main>
+        <h1>Test if this is the correct page</h1>
+
+        <h4>New User Page</h4>
+
+        <form action="/users" method="POST">
+
+            <label>
+                <span>username:</span>
+                <input type="text" name="username" />
+            </label>
+
+            <label>
+                <span>password:</span>
+                <input type="password" name="password" />
+            </label>
+            <br>
+            <br>
+            <input type="submit" value="Create User" />
+        </form>
+
+    </main>
+
+<%- include('../partials/footer.ejs') %>

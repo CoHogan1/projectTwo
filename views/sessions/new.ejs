@@ -1,0 +1,26 @@
+<%- include('../partials/head.ejs') %>
+<%- include('../partials/nav.ejs') %>
+
+    <main>
+
+        <h4>Login Page</h4>
+
+        <form action="/sessions" method="POST">
+
+            <label>
+                <span>username:</span>
+                <input type="text" name="username" />
+            </label>
+
+            <label>
+                <span>password:</span>
+                <input type="password" name="password" />
+            </label>
+            <br>
+            <br>
+            <input type="submit" value="login New User" />
+        </form>
+
+    </main>
+
+<%- include('../partials/footer.ejs') %>

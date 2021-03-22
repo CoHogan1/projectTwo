@@ -1,0 +1,19 @@
+{
+  "name": "projecttwo",
+  "version": "1.0.0",
+  "description": "Node mongoose and express, an app to help clear your mind.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/CoHogan1/projectTwo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/CoHogan1/projectTwo/issues"
+  },
+  "homepage": "https://github.com/CoHogan1/projectTwo#readme"
+}

@@ -37,15 +37,12 @@ router.post('/index', (req, res)=>{
             res.redirect('/home/index')
         }
     })
-
 })
 
 router.get('/index/new', (req, res)=>{
     console.log('**new route**')
     res.render('new.ejs')
 })
-
-
 
 router.get('/index/:id', (req, res)=>{
     Attempt.findById(req.params.id, (err, system)=>{
@@ -79,7 +76,6 @@ router.put('/index', (req, res)=>{
     })
 })
 
-
 // delete-----------------------------------------------------------------------
 
 router.delete('/index/:id', (req, res)=>{
@@ -104,7 +100,6 @@ router.get('/index/:id/edit', (req, res)=>{
     })
 })
 
-
 // --------------2 of 2---------------------------------------------------------
 router.put('/index/:id', (req, res)=>{
     //console.log(req.body) // this is working
@@ -126,20 +121,5 @@ router.put('/index/:id', (req, res)=>{
             res.redirect('/home/index')
     })
 })
-
 //------------------------------------------------------------------------------
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 module.exports = router

@@ -1,10 +1,27 @@
-<div class="navigation">
-    <p>Home</p>
-    <p>Index</p>
+<nav>
+    <div>
+        <span>
+            <a href="/home" class="">HOME</a> |
+            <a href="/home/index" class=""> All systems</a>
+        </span>
 
-    <div class="users">
-        <p>Sign In</p>
-        <p>Sign up</p>
+        <ul class="right">
+            <% if (currentUser) { %>
+                <li><a href="/index/new">Create a new system</a> </li>
+                <li style="padding-right:15px;">Welcome <%= currentUser.username %></li>
+
+                <li>
+                    <form action="/sessions?_method=DELETE" method="POST">
+                        <button>Log out</button>
+                    </form>
+                </li>
+
+            <% } else { %>
+                <li><a href="/sessions/new">Log In</a></li>
+                <li><a href="/users/new">Sign Up</a></li>
+            <% } %>
+
+        </ul>
     </div>
 
-</div>
+</nav>

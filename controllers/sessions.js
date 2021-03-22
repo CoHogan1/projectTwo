@@ -12,15 +12,12 @@ router.get('/new', (req, res) => {
 router.post('/', (req, res) => {
     console.log(req.body.username, req.body.password + " name and password")
     User.findOne({ username: req.body.username}, (err, foundUser) => {
-        console.log(foundUser + " this is the found user...");
+        //console.log(foundUser + " this is the found user...");
         if (err) {
                 res.send(err)
         }
         else {
             if (foundUser){
-                //console.log(foundUser + " this is the foundUser")
-                console.log(req.body.password, foundUser.password + ' This does this match?')
-                console.log(bcrypt.compareSync(req.body.password, foundUser.password))
                 if (bcrypt.compareSync(req.body.password, foundUser.password)){ // this is the error
                     //login user and create session
                     req.session.currentUser = foundUser

@@ -69,21 +69,6 @@ db.on('disconnected', ()=> console.log('Mongo is now Disconnected, Have a good d
 
 //-------------------------clear users database---------------------------------
 
-// Client.deleteOne({id: 605851}, {new:true} ,(err, allData)=>{ // remove all data from DB
-//     console.log(allData)
-//     db.close()
-// })
-
-// Client.find({},'userName', (err, everything)=>{ // nclear users database
-//     console.log(everything + ' userName')
-//     db.close()
-// })
-
-// Client.findByIdAndRemove({id: 605817}, (err, users)=>{
-//     console.log(users)
-//     db.close()
-// })
-
 // Attempt.find({}, (err, everything)=>{
 //     console.log(everything)
 //     db.close()
@@ -100,8 +85,8 @@ app.use(session({
 // middleware to ensure user is logged in. // need to have users before hand...
 
 const isAuthenticated = (req, res, next) => { // comment out to set up a new user.
-    console.log('checking to see if anyone is logged in.')
-    console.log(req.session.currentUser + " this is the current user");
+    console.log('log-in dummy..... :)')
+    //console.log(req.session.currentUser + " this is the current user");
     if (req.session.currentUser) {
         console.log(req.session.currentUser)
         return next()

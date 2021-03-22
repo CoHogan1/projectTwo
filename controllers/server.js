@@ -93,10 +93,15 @@ router.delete('/index/:id', (req, res)=>{
 
 // edit route----1 0f 2---------------------------------------------------------
 router.get('/index/:id/edit', (req, res)=>{
+    console.log(req.params.id)
     Attempt.findById(req.params.id, (err, program)=>{
-        //console.log(program)
-        //res.send("This is working")
-        res.render('edit.ejs', { practices: program })
+        if (err) {
+            console.log(err + ' error')
+            console.log(program + ' program')
+        } else {
+            //res.send(program)
+            res.render('edit.ejs', { practices: program })
+        }
     })
 })
 

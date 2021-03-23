@@ -59,7 +59,8 @@ router.get('/index', (req, res)=>{
             console.log(err)
         } else {
             //console.log(data)
-            res.render('index.ejs', { practices: data})
+            res.render('index.ejs',
+            { practices: data, currentUser: req.session.currentUser})
         }
     })
 })

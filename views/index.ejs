@@ -4,7 +4,12 @@
         <%- include ('./partials/head.ejs') %>
     </head>
     <body>
-        <h1>Index page</h1>
+
+        <nav>
+            <%- include('./partials/nav.ejs') %>
+        </nav>
+        
+        <h1>Index page</h1> <h1><%= currentUser.username %> : current user</h1>
 
         <table>
             <tr>

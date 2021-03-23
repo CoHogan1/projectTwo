@@ -4,6 +4,10 @@
         <%- include ('./partials/head.ejs') %>
     </head>
     <body>
+
+        <nav>
+            <%- include('./partials/nav.ejs') %>
+        </nav>
         <h1>New System</h1>
         <form action="/home/index" method="POST">
             Name:<input type="text" name="name" value=""><br>

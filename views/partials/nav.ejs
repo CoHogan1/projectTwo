@@ -1,4 +1,4 @@
-<nav>
+<nav class="navPartial">
     <div>
         <span>
             <a href="/home" class="">HOME</a> |
@@ -8,20 +8,23 @@
         <ul class="right">
             <% if (currentUser) { %>
                 <li><a href="/index/new">Create a new system</a> </li>
-                <li style="padding-right:15px;">Welcome <%= currentUser.username %></li>
-
+                <li style="padding-right:15px;">Welcome
+                     <%= currentUser.username.charAt(0).toUpperCase() + currentUser.username.slice(1)  %></li>
                 <li>
                     <form action="/sessions?_method=DELETE" method="POST">
                         <button>Log out</button>
                     </form>
                 </li>
-
             <% } else { %>
                 <li><a href="/sessions/new">Log In</a></li>
                 <li><a href="/users/new">Sign Up</a></li>
             <% } %>
-
         </ul>
-    </div>
 
+    </div>
 </nav>
+
+
+<!-- history.go(-1)  simulated back button -->
+
+<!-- <a href="link" onclick="history.go(-1)"> Text </a> -->

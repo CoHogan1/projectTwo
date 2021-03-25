@@ -3,21 +3,22 @@
     <head>
         <%- include ('./partials/head.ejs') %>
     </head>
-    <body>
-
+    <body class="indexBody">
         <nav>
             <%- include('./partials/nav.ejs') %>
         </nav>
-        
-        <h1>Index page</h1> <h1><%= currentUser.username %> : current user</h1>
 
-        <table>
+        <table class="indexTable">
+            <th><td class="tableTitle">All Methods</td>
+            </th>
             <tr>
-                <td>Name:</td>
-                <td>Did It Work?</td>
-                <td>My Rating</td>
-                <td>Results:</td>
-                <td>Notes:</td>
+                <th>          </th>
+                <th>Name:       </th>
+                <th>         </th>
+                <th>Did It Work?</th>
+                <th>My Rating   </th>
+                <th>Results:    </th>
+                <th>Notes:      </th>
             </tr>
             <tr>
             <%for (let i = 0; i < practices.length; i++) { %>
@@ -25,7 +26,7 @@
                     onclick="window.location.href='/home/index/<%=practices[i].id%>/edit'"
                     >Edit</button></td>
 
-                <td><%=practices[i].name%></td>
+                <td id="name"><%=practices[i].name%></td>
 
                 <td>
                     <form action="/home/index/<%=practices[i].id%>?_method=DELETE" method="POST">
@@ -40,7 +41,7 @@
             <%}%>
         </table>
 
-        <button type="button" onclick="window.location.href='/home/index/new'">Add System</button>
+        <button type="button" onclick="window.location.href='/home/index/new'">Add A New System</button>
 
     </body>
 </html>

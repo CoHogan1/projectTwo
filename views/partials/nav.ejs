@@ -1,24 +1,25 @@
 <nav class="navPartial">
-    <div>
-        <span>
-            <a href="/home" class="">HOME</a> |
-            <a href="/home/index" class=""> All systems</a>
+    <div class="navelems">
+        <span class="navSpan">
+            <a href="/home" class="">HOME</a>
+            <a href="/home/index" class=""> All Methods</a>
+            <a href="/index/new">Create a new method</a>
         </span>
 
         <ul class="right">
             <% if (currentUser) { %>
-                <li><a href="/index/new">Create a new system</a> </li>
                 <li style="padding-right:15px;">Welcome
                      <%= currentUser.username.charAt(0).toUpperCase() + currentUser.username.slice(1)  %></li>
                 <li>
                     <form action="/sessions?_method=DELETE" method="POST">
-                        <button>Log out</button>
+                        <button class="navUsers">Log out</button>
                     </form>
                 </li>
             <% } else { %>
-                <li><a href="/sessions/new">Log In</a></li>
-                <li><a href="/users/new">Sign Up</a></li>
+                <li class="navUsers"><a href="/sessions/new">Log In</a></li>
+                <li><a class="navUsers" href="/users/new">Sign Up</a></li>
             <% } %>
+            <li><button type="button" name="button">Toggle Dark mode</button></li>
         </ul>
 
     </div>

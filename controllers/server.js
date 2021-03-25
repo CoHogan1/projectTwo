@@ -6,18 +6,18 @@ const Attempt = require('../models/schema.js')
 
 
 // controllers ---------------------------------------------------------------
-router.get('/', (req, res)=>{
-    console.log('Running')
-    // Attempt.create(req.body, (err, genesis)=>{
-    //     if (err) {
-    //         console.log(err)
-    //     } else {
-    //         console.log(genesis)
-    //         res.redirect('/home/')
-    //     }
-    //})
-    res.send(`<h1>This is working!</h1>`)
-})
+// router.get('/', (req, res)=>{
+//     console.log('Running')
+//     // Attempt.create(req.body, (err, genesis)=>{
+//     //     if (err) {
+//     //         console.log(err)
+//     //     } else {
+//     //         console.log(genesis)
+//     //         res.redirect('/home/')
+//     //     }
+//     //})
+//     res.send(`<h1>This is working!</h1>`)
+// })
 
 //-----show---------------------------------------------------------------------
 

@@ -3,15 +3,17 @@
 <head>
     <%- include ('./partials/head.ejs') %>
 </head>
-<body>
-    <h1>Edit <%=practices.name%> </h1>
+<body class="editBody">
+    <nav>
+        <%- include('./partials/nav.ejs') %>
+    </nav>
 
-    <form method="POST" action="/home/index/<%=practices.id%>?_method=PUT">
+    <form class="editForm" method="POST" action="/home/index/<%=practices.id%>?_method=PUT">
+        <h1 class="editH1">Adjust-- <%=practices.name%> </h1>
         <label for="">Name:</label>
-        <input type="text" name="name" value="<%= practices.name%>">  <br>
+        <input type="text" name="name" value="<%= practices.name%>"> <br>
 
         <label for="">Did It work?: Check for yes!</label>
-        <!-- boolean did it work true or flase -->
         <input type="checkbox" name="didItWork" value="<%= practices.didItWork%>"
             <% if (practices.didItWork) { %>
                 checked
@@ -22,12 +24,12 @@
         <input type="number" name="myRating" min='0' max='5' value="<%= practices.myRating%>"><br>
 
         <label for="">Results:</label>
-        <input type="text" name="results" value="<%= practices.results%>"><br>
+        <input class="editResults" type="text" name="results" value="<%= practices.results%>"><br>
 
         <label for="">Personal Notes:</label>
-        <input type="text" name="notes" value="<%= practices.notes%>"><br>
+        <input class="editNotes" type="text" name="notes" value="<%= practices.notes%>"><br>
 
-        <input type="submit" name="" value="Update"/>
+        <input class="editSubmit" type="submit" name="" value="Update"/>
     </form>
 
 </body>

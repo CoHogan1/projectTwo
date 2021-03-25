@@ -14,19 +14,16 @@
     text-shadow: 0 0 10px blue;
     font-size: 19px;
     padding: 10px;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+    height: 100px;
 }
 .navelems {
     display: flex;
     flex-direction: row;
-    justify-content: flex-end;
+    justify-content: space-between;
 }
 .right {
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
     margin-left: 580px;
 }
 .navSpan {
@@ -55,6 +52,8 @@
 }
 /* index page-----------------------------------------------------------------*/
 .indexBody{
+    width: 100vw;
+    height: 100vh;
     background-image: url(https://upload.wikimedia.org/wikipedia/commons/d/d1/Glenwood_Canyon.jpg);
     background-size: cover;
 }
@@ -68,7 +67,7 @@
     border-radius: 20px;
     border: 2px solid silver;
     color: white;
-    text-shadow: 0 0 10px blue, 0 0 20px white;
+    text-shadow: 0 0 10px blue, 0 0 20px cyan;
     font-size: 19px;
     padding: 10px;
 }
@@ -77,13 +76,95 @@
     font-weight: bold;
     font-style: oblique;
 }
+.indexButton {
+    margin-left: 100px;
+}
+/* edit page------------------------------------------------------------------*/
+.editBody {
+    width: 100vw;
+    height: 100vh;
+    background-image: url(https://eyesofodysseus.files.wordpress.com/2013/05/wpid-clouds_reflection-seamless.jpeg);
+    background-size: cover;
+
+}
+.editH1 {
+    color: white;
+}
+
+.editForm {
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 90%;
+    background-color: rgba(0,0,0, 0.6);
+    border-radius: 20px;
+    border: 2px solid silver;
+    color: white;
+    text-shadow: 0 0 10px blue, 0 0 20px cyan;
+    font-size: 19px;
+    padding: 10px;
+}
+
+.editForm > label {
+    font-size: 28px;
+    padding: 12px;
+
+}
+.editSubmit {
+    width: 70px;
+    margin-left: 100px;
+}
+.editSubmit:hover{
+    background-color: lime;
+}
+
+.editResults{
+    width: 385px;
+}
+.editNotes {
+    width: 300px;
+}
+/* new page ------------------------------------------------------------------*/
+.newBody {
+    width: 100vw;
+    height: 100vh;
+    background-image: url(https://wallpaperstock.net/wallpapers/thumbs1/49338wide.jpg);
+    background-size: cover;
+}
+
+.newForm {
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 90%;
+    background-color: rgba(0,0,0, 0.6);
+    border-radius: 20px;
+    border: 2px solid silver;
+    color: white;
+    text-shadow: 0 0 10px blue, 0 0 20px cyan;
+    font-size: 19px;
+    padding: 10px;
+}
+
+.newForm > span {
+    font-size: 28px;
+    padding: 12px;
+}
+
+.addSubmit {
+    margin-left:100px;
+    margin-top: 5px;
+    padding: 2px;
+}
+
+.addSubmit:hover {
+    background-color: lime;
+}
+/* sessions-------------------------------------------------------------------*/
 
 
 
-
-
-
-/* All---------------------------------------------------------------------- */
+/* All------------------------------------------------------------------------*/
 a {
     color:white;
 }
@@ -94,7 +175,16 @@ button {
     border-radius: 5px;
     background-color: lightblue;
 }
-
 button:hover {
     background-color: lime;
+}
+#delete:hover {
+    background-color: red;
+}
+#logout:hover {
+    background-color: red;
+}
+
+tr:hover {
+    background-color: rgba(255,255,255, 0.5);
 }

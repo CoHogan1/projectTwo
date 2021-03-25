@@ -3,7 +3,7 @@
         <span class="navSpan">
             <a href="/home" class="">HOME</a>
             <a href="/home/index" class=""> All Methods</a>
-            <a href="/index/new">Create a new method</a>
+            <a href="/home/index/new">Create a new method</a>
         </span>
 
         <ul class="right">
@@ -12,14 +12,14 @@
                      <%= currentUser.username.charAt(0).toUpperCase() + currentUser.username.slice(1)  %></li>
                 <li>
                     <form action="/sessions?_method=DELETE" method="POST">
-                        <button class="navUsers">Log out</button>
+                        <button class="navUsers" id="logout">Log out</button>
                     </form>
                 </li>
             <% } else { %>
                 <li class="navUsers"><a href="/sessions/new">Log In</a></li>
                 <li><a class="navUsers" href="/users/new">Sign Up</a></li>
             <% } %>
-            <li><button type="button" name="button">Toggle Dark mode</button></li>
+            <li><button type="button" name="button">Dark mode</button></li>
         </ul>
 
     </div>

@@ -41,7 +41,7 @@ router.post('/index', (req, res)=>{
 
 router.get('/index/new', (req, res)=>{
     console.log('**new route**')
-    res.render('new.ejs')
+    res.render('new.ejs', {currentUser: req.session.currentUser})
 })
 
 router.get('/index/:id', (req, res)=>{
@@ -101,7 +101,10 @@ router.get('/index/:id/edit', (req, res)=>{
             console.log(program + ' program')
         } else {
             //res.send(program)
-            res.render('edit.ejs', { practices: program })
+            res.render('edit.ejs', {
+                practices: program,
+                currentUser: req.session.currentUser
+             })
         }
     })
 })
@@ -129,3 +132,7 @@ router.put('/index/:id', (req, res)=>{
 })
 //------------------------------------------------------------------------------
 module.exports = router
+
+
+
+// moon flower for dark mode.

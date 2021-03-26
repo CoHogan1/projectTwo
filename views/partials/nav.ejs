@@ -4,6 +4,7 @@
             <a href="/home" class="">HOME</a>
             <a href="/home/index" class=""> All Methods</a>
             <a href="/home/index/new">Create a new method</a>
+            <button class="dark" type="button" name="button">Dark mode</button>
         </span>
 
         <ul class="right">
@@ -19,10 +20,27 @@
                 <li class="navUsers"><a href="/sessions/new">Log In</a></li>
                 <li><a class="navUsers" href="/users/new">Sign Up</a></li>
             <% } %>
-            <li><button type="button" name="button">Dark mode</button></li>
+            <!-- <li><button class="dark" type="button" name="button">Dark mode</button></li> -->
         </ul>
 
     </div>
+
+
+
+<!-- Cool -->
+    <script>
+        const btn = document.querySelector('.dark')
+        const theme = document.querySelector('.style')
+
+        btn.addEventListener('click', ()=>{
+            if (theme.getAttribute('href') == '/style.css') {
+                theme.href = '/darkmode.css'
+            } else {
+                theme.href = '/style.css'
+            }
+        })
+    </script>
+
 </nav>
 
 

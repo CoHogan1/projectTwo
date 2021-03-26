@@ -1,0 +1,251 @@
+* {
+
+}
+
+/* ---------------------------This is dark mode-------------------------------*/
+
+
+/* nav------------------------------------------------------------------------*/
+.navPartial {
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 90%;
+    background-color: rgba(0,0,0, 0.6);
+    border-radius: 20px;
+    border: 2px solid silver;
+    color: white;
+    text-shadow: 0 0 10px blue;
+    font-size: 19px;
+    padding: 10px;
+    height: 100px;
+}
+.navelems {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.right {
+    display: flex;
+    flex-direction: column;
+    margin-left: 580px;
+}
+.navSpan {
+    display: flex;
+    flex-direction: column;
+}
+
+/* home page----------------------------------------------------------------- */
+.homeBody {
+    width: 100vw;
+    height: 100vh;
+    background-image: url(https://acegif.com/wp-content/gifs/water-18.gif);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.homeDiv {
+    margin: auto;
+    width: 90%;
+    background-color: rgba(0,0,0, 0.6);
+    border-radius: 20px;
+    border: 2px solid silver;
+    color: #f2f3f4;
+    text-shadow: 0 0 10px purple;
+    font-size: 19px;
+    padding: 10px;
+}
+/* index page-----------------------------------------------------------------*/
+.indexBody{
+    width: 100vw;
+    height: 100vh;
+    background-image: url(https://bestanimations.com/media/trees/1086675114starry-night-forest-nature-gif-1.gif);
+    background-size: cover;
+}
+
+.indexTable {
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 90%;
+    background-color: rgba(0,0,0, 0.6);
+    border-radius: 20px;
+    border: 2px solid silver;
+    color: #f2f3f4;
+    text-shadow: 0 0 10px purple;
+    font-size: 19px;
+    padding: 10px;
+}
+#name {
+    font-size: 20px;
+    font-weight: bold;
+    font-style: oblique;
+}
+.indexButton {
+    margin-left: 100px;
+}
+/* edit page------------------------------------------------------------------*/
+.editBody {
+    width: 100vw;
+    height: 100vh;
+    background-image: url(http://31.media.tumblr.com/tumblr_maolcpnQS61qakj1do1_500.gif);
+    background-size: cover;
+
+}
+.editH1 {
+    color: #f2f3f4;
+}
+
+.editForm {
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 90%;
+    background-color: rgba(0,0,0, 0.6);
+    border-radius: 20px;
+    border: 2px solid silver;
+    color: #f2f3f4;
+    text-shadow: 0 0 10px blue, 0 0 20px cyan;
+    font-size: 19px;
+    padding: 10px;
+
+}
+
+.editForm > label {
+    font-size: 28px;
+    padding: 12px;
+}
+
+.editForm > input  {
+    background-color: #f2f3f4;
+}
+.editSubmit {
+    margin-left: 130px;
+    margin-bottom: 15px;
+}
+.editSubmit:hover{
+    background-color: lime;
+}
+
+.editResults{
+    width: 385px;
+}
+.editNotes {
+    width: 300px;
+}
+/* new page ------------------------------------------------------------------*/
+.newBody {
+    width: 100vw;
+    height: 100vh;
+    background-image: url(https://i.pinimg.com/originals/76/6d/78/766d780bb1040ebdd0535ae75326796b.gif);
+    background-size: cover;
+}
+
+.newForm {
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 90%;
+    background-color: rgba(0,0,0, 0.6);
+    border-radius: 20px;
+    border: 2px solid silver;
+    color: #f2f3f4;
+    text-shadow: 0 0 10px blue, 0 0 20px cyan;
+    font-size: 19px;
+    padding: 10px;
+}
+
+.newForm > span {
+    font-size: 28px;
+    padding: 12px;
+}
+
+.addSubmit {
+    margin-left:100px;
+    margin-top: 5px;
+    padding: 2px;
+}
+
+.addSubmit:hover {
+    background-color: lime;
+}
+/* sessions-------------------------------------------------------------------*/
+.loginBody {
+    width: 100vw;
+    height: 100vh;
+    background-image: url(https://i.imgur.com/V2aic5Q.gif);
+    background-size: cover;
+}
+.loginform {
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 90%;
+    background-color: rgba(0,0,0, 0.6);
+    border-radius: 20px;
+    border: 2px solid silver;
+    color: #f2f3f4;
+    text-shadow: 0 0 10px blue, 0 0 20px cyan;
+    font-size: 19px;
+    padding: 10px;
+}
+.loginSubmit{
+    margin-left: 90px;
+}
+.loginSubmit:hover {
+    background-color: lime;
+
+}
+/* users.new -----------------------------------------------------------------*/
+.userBody {
+    width: 100vw;
+    height: 100vh;
+    background-image: url(https://i.gifer.com/3w8Z.gif);
+    background-size: cover;
+}
+.userForm{
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 90%;
+    background-color: rgba(0,0,0, 0.6);
+    border-radius: 20px;
+    border: 2px solid silver;
+    color: #f2f3f4;
+    text-shadow: 0 0 10px blue, 0 0 20px cyan;
+    font-size: 19px;
+    padding: 10px;
+}
+.userSubmit{
+    margin-left: 90px;
+}
+.userSubmit:hover {
+    background-color: lime;
+}
+
+/* All------------------------------------------------------------------------*/
+a {
+    color: #f2f3f4;
+}
+a:hover {
+    color: purple;
+}
+button {
+    border-radius: 5px;
+    background-color: #f2f3f4;
+}
+button:hover {
+    background-color: purple;
+}
+#delete:hover {
+    background-color: red;
+}
+#logout:hover {
+    background-color: red;
+}
+tr:hover {
+    background-color: rgba(255,255,255, 0.3);
+}
+
+footer {
+    opacity: 0.9;
+}

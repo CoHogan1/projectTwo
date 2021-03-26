@@ -1,3 +1,4 @@
+![20210326_122645](https://user-images.githubusercontent.com/68661954/112677048-d9e16800-8e2e-11eb-84ad-cf99cd328b20.jpg)
 # projectTwo
 Node mongoose and express, an app to help clear your mind.
 
@@ -18,10 +19,3 @@ This app will utilize what we have been taught in mongodb, moongoose, node, expr
 are essential to programming.
 
 
-
-
-A README.md file with explanations of the technologies used, the approach was taken, unsolved problems, and notes to yourself so you can come back to your project later in the course and be able to pick up your train of thought, etc
-Inside Your README.md:
-Include User Stories
-Include wireframes that you designed during the planning process
-Have a link to your hosted working app.

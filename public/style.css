@@ -111,8 +111,8 @@
 
 }
 .editSubmit {
-    width: 70px;
-    margin-left: 100px;
+    margin-left: 130px;
+    margin-bottom: 15px;
 }
 .editSubmit:hover{
     background-color: lime;
@@ -161,6 +161,59 @@
     background-color: lime;
 }
 /* sessions-------------------------------------------------------------------*/
+.loginBody {
+    width: 100vw;
+    height: 100vh;
+    background-image: url(https://i.gifer.com/origin/de/de447e55ad7287aab0e53d83a074aba2.gif);
+    background-size: cover;
+}
+.loginform {
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 90%;
+    background-color: rgba(0,0,0, 0.6);
+    border-radius: 20px;
+    border: 2px solid silver;
+    color: white;
+    text-shadow: 0 0 10px blue, 0 0 20px cyan;
+    font-size: 19px;
+    padding: 10px;
+}
+.loginSubmit{
+    margin-left: 90px;
+}
+.loginSubmit:hover {
+    background-color: lime;
+
+}
+/* users.new */
+.userBody {
+    width: 100vw;
+    height: 100vh;
+    background-image: url(https://i.gifer.com/origin/de/de447e55ad7287aab0e53d83a074aba2.gif);
+    background-size: cover;
+}
+.userForm{
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 90%;
+    background-color: rgba(0,0,0, 0.6);
+    border-radius: 20px;
+    border: 2px solid silver;
+    color: white;
+    text-shadow: 0 0 10px blue, 0 0 20px cyan;
+    font-size: 19px;
+    padding: 10px;
+}
+.userSubmit{
+    margin-left: 90px;
+}
+.userSubmit:hover {
+    background-color: lime;
+
+}
 
 
 
@@ -184,7 +237,6 @@ button:hover {
 #logout:hover {
     background-color: red;
 }
-
 tr:hover {
-    background-color: rgba(255,255,255, 0.5);
+    background-color: rgba(255,255,255, 0.3);
 }

@@ -5,7 +5,7 @@ const Attempt = require('../models/schema.js')
 
 
 
-// controllers ---------------------------------------------------------------
+// controllers -----------------------------------------------------------------
 // router.get('/', (req, res)=>{
 //     console.log('Running')
 //     // Attempt.create(req.body, (err, genesis)=>{
@@ -54,6 +54,11 @@ router.get('/index/:id', (req, res)=>{
 
 router.get('/index', (req, res)=>{
     //console.log('get index route')
+    if (req.body.didItWork === 'on') {
+        req.body.didItWork = true
+    } else {
+        req.body.didItWork = false
+    }    
     Attempt.find({}, (err, data, next)=>{
         if (err) {
             console.log(err)
@@ -112,11 +117,11 @@ router.get('/index/:id/edit', (req, res)=>{
 // --------------2 of 2---------------------------------------------------------
 router.put('/index/:id', (req, res)=>{
     //console.log(req.body) // this is working
-    if (req.body.didItWork === 'on') {
-        req.body.didItWork = true
-    } else {
-        req.body.didItWork = false
-    }
+    // if (req.body.didItWork === 'on') {
+    //     req.body.didItWork = true
+    // } else {
+    //     req.body.didItWork = false
+    // }
     console.log(req.body)
     console.log(req.params.id)
     //res.send("Checking to see if this works")  // working

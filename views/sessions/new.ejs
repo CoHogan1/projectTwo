@@ -1,26 +1,30 @@
 <%- include('../partials/head.ejs') %>
+
+<body class="loginBody">
+
 <%- include('../partials/nav.ejs') %>
 
     <main>
 
-        <h4>Login Page</h4>
 
-        <form action="/sessions" method="POST">
+        <form class="loginForm" action="/sessions" method="POST">
+            <h4>Login Page</h4>
 
             <label>
-                <span>username:</span>
+                <span>Username:</span>
                 <input type="text" name="username" />
-            </label>
+            </label><br><br>
 
             <label>
-                <span>password:</span>
+                <span>Password:</span>
                 <input type="password" name="password" />
             </label>
             <br>
             <br>
-            <input type="submit" value="login New User" />
+            <input class="loginSubmit" type="submit" value="Login" />
         </form>
 
     </main>
 
 <%- include('../partials/footer.ejs') %>
+</body>

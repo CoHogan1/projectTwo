@@ -28,7 +28,7 @@ router.post('/', (req, res)=>{
             }
         }
         else{
-            res.send(createdUser)
+            res.redirect('/home')
         }
     })
 })

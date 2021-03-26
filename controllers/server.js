@@ -53,25 +53,24 @@ router.get('/index/:id', (req, res)=>{
 })
 
 router.get('/index', (req, res)=>{
-    //console.log('get index route')
-    if (req.body.didItWork === 'on') {
-        req.body.didItWork = true
-    } else {
-        req.body.didItWork = false
-    }    
     Attempt.find({}, (err, data, next)=>{
         if (err) {
             console.log(err)
         } else {
             //console.log(data)
             res.render('index.ejs',
-            { practices: data, currentUser: req.session.currentUser})
+            { practices:data, currentUser:req.session.currentUser})
         }
     })
 })
 
 router.put('/index', (req, res)=>{
     console.log('pposting to home/index route')
+    if (req.body.didItWork === 'on') {
+        req.body.didItWork = true
+    } else {
+        req.body.didItWork = false
+    }
     Attempt.create(req.body, (err, genesis)=>{ // probably dont need this create.
         if (err) {
             console.log(err)
@@ -117,11 +116,11 @@ router.get('/index/:id/edit', (req, res)=>{
 // --------------2 of 2---------------------------------------------------------
 router.put('/index/:id', (req, res)=>{
     //console.log(req.body) // this is working
-    // if (req.body.didItWork === 'on') {
-    //     req.body.didItWork = true
-    // } else {
-    //     req.body.didItWork = false
-    // }
+    if (req.body.didItWork === 'on') {
+        req.body.didItWork = true
+    } else {
+        req.body.didItWork = false
+    }
     console.log(req.body)
     console.log(req.params.id)
     //res.send("Checking to see if this works")  // working

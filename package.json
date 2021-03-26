@@ -1,9 +1,13 @@
 {
   "name": "projecttwo",
   "version": "1.0.0",
+  "engines": {
+  "node": "10.19.0"
+  },
   "description": "Node mongoose and express, an app to help clear your mind.",
   "main": "app.js",
   "scripts": {
+    "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

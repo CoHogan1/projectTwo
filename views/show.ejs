@@ -3,21 +3,25 @@
     <head>
         <%- include ('./partials/head.ejs') %>
     </head>
-    <body>
-
+    <body class="showBody">
         <nav>
             <%- include('./partials/nav.ejs') %>
         </nav>
 
-        <h1> <%= practices.name%>        </h1>
-        <h1> <%= practices.didItWork%>   </h1>
-        <h1> <%= practices.myRating%>    </h1>
-        <h1> <%= practices.results%>     </h1>
-        <h1> <%= practices.notes%>       </h1>
+        <div class="showForm">
 
-        <button type="button"
+
+
+        <h1> <%= practices.name%>        </h1>
+        <h3>Did it work for me? <u><%= practices.didItWork%></u></h3>
+        <h3>My Rating: <%= practices.myRating%> out of 5</h3>
+        <h3>My Results: <%= practices.results%></h3>
+        <h3>My Notes: <%= practices.notes%></h3>
+
+        <button type="button" class="showButton"
         onclick='window.location.href="/home/index/<%=practices.id%>/edit"'>
-        Edit</button>
+        Edit <%= practices.name%></button>
+    </div>
 
 
     </body>

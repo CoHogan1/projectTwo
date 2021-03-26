@@ -85,7 +85,6 @@
     height: 100vh;
     background-image: url(https://eyesofodysseus.files.wordpress.com/2013/05/wpid-clouds_reflection-seamless.jpeg);
     background-size: cover;
-
 }
 .editH1 {
     color: white;
@@ -212,6 +211,32 @@
 }
 .userSubmit:hover {
     background-color: lime;
+}
+
+/* show --------------------------------------------------------------------- */
+.showBody {
+    width: 100vw;
+    height: 100vh;
+    background-image: url(https://eyesofodysseus.files.wordpress.com/2013/05/wpid-clouds_reflection-seamless.jpeg);
+    background-size: cover;
+}
+
+.showForm {
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    width: 90%;
+    background-color: rgba(0,0,0, 0.6);
+    border-radius: 20px;
+    border: 2px solid silver;
+    color: white;
+    text-shadow: 0 0 10px blue, 0 0 20px cyan;
+    font-size: 19px;
+    padding: 10px;
+}
+
+.showButton {
+    margin-left: 50px;
 }
 
 

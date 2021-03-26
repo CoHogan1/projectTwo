@@ -96,6 +96,22 @@ router.delete('/index/:id', (req, res)=>{
     })
 })
 
+router.get('/index/:id/show', (req, res)=>{
+    console.log(req.params.id)
+    Attempt.findById(req.params.id, (err, program)=>{
+        if (err) {
+            console.log(err + ' error')
+            console.log(program + ' program')
+        } else {
+            //res.send(program)
+            res.render('show.ejs', {
+                practices: program,
+                currentUser: req.session.currentUser
+             })
+        }
+    })
+})
+
 // edit route----1 0f 2---------------------------------------------------------
 router.get('/index/:id/edit', (req, res)=>{
     console.log(req.params.id)

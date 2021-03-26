@@ -18,4 +18,6 @@ ALso there will be a button to toggle darkmode. :)
 This app will utilize what we have been taught in mongodb, moongoose, node, express, javascript, html, css, and other skills that
 are essential to programming.
 
+I would like to have the dark mode button stay active through each page click.
+I would also like to have more helpful information displaye do on the page.
 

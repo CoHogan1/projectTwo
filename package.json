@@ -2,7 +2,7 @@
   "name": "projecttwo",
   "version": "1.0.0",
   "engines": {
-  "node": "10.19.0"
+    "node": "10.19.0"
   },
   "description": "Node mongoose and express, an app to help clear your mind.",
   "main": "app.js",
@@ -19,5 +19,9 @@
   "bugs": {
     "url": "https://github.com/CoHogan1/projectTwo/issues"
   },
-  "homepage": "https://github.com/CoHogan1/projectTwo#readme"
+  "homepage": "https://github.com/CoHogan1/projectTwo#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0"
+  },
+  "devDependencies": {}
 }

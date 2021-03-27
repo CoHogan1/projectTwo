@@ -1,7 +1,7 @@
 // whatever I want to call my app
 
-require('dotenv').config()
 const express = require('express')
+require('dotenv').config()
 const PORT = process.env.PORT
 const app = express()
 

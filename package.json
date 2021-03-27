@@ -1,9 +1,13 @@
 {
   "name": "projecttwo",
   "version": "1.0.0",
-  "description": "![20210326_122645](https://user-images.githubusercontent.com/68661954/112677048-d9e16800-8e2e-11eb-84ad-cf99cd328b20.jpg) # projectTwo Node mongoose and express, an app to help clear your mind.",
+  "engines": {
+    "node": "10.19.0"
+  },
+  "description": "Node mongoose and express, an app to help clear your mind.",
   "main": "app.js",
   "scripts": {
+    "start": "node app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -17,11 +21,13 @@
   },
   "homepage": "https://github.com/CoHogan1/projectTwo#readme",
   "dependencies": {
-    "bcrypt": "^5.0.1",
-    "dotenv": "^8.2.0",
-    "ejs": "^3.1.6",
-    "express": "^4.17.1",
-    "express-sessions": "^1.0.6",
-    "mongoose": "^5.12.2"
-  }
+      "bcrypt": "^5.0.1",
+      "dotenv": "^8.2.0",
+      "ejs": "^3.1.6",
+      "express": "^4.17.1",
+      "express-session": "^1.17.1",
+      "method-override": "^3.0.0",
+      "mongoose": "^5.11.19"
+  },
+  "devDependencies": {}
 }

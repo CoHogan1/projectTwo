@@ -16,7 +16,7 @@ const Attempt = require('../models/schema.js')
 //     //         res.redirect('/home/')
 //     //     }
 //     //})
-//     res.send(`<h1>This is working!</h1>`)
+//     res.redirect()
 // })
 
 //-----show---------------------------------------------------------------------

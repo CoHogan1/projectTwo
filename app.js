@@ -107,7 +107,7 @@ app.use('/sessions', sessionsControllers)
 
 
 // HOMEPAGE Route
-app.get('/home', (req, res) => {
+app.get('/', (req, res) => {
     res.render('home.ejs', {currentUser: req.session.currentUser})
 })
 
